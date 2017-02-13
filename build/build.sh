@@ -48,12 +48,6 @@ git clone https://github.com/F5Networks/f5-ansible.git --recursive
 mkdir ~/.ssh
 ln -s /dev/null ~/.ssh/known_hosts
 
-# Install the starbucks certificates
-apk add ca-certificates openssl
-wget -O /tmp/starbucks.crt http://crl.starbucks.com/pki/MSORCA11_Starbucks%20Root%20CA.crt
-openssl x509 -in /tmp/starbucks.crt -inform der -out /usr/local/share/ca-certificates/starbucks.crt -outform PEM
-update-ca-certificates
-
 # switch to zsh
 apk add zsh
 curl -L http://install.ohmyz.sh | sh
